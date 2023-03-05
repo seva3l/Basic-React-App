@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     title:{
         fontSize:18,
         fontWeight:'600',
-        color: Color.PRIMARY_TEXT
+        color: Color.PRIMARY_TEXT,
     },
     viewCategoriesContainer:{
         flexDirection:'row',
@@ -23,13 +23,14 @@ const styles = StyleSheet.create({
         marginTop:2,
         marginBottom:5,
         justifyContent:"center",
-        alignItems:"center"
+        alignItems:"center",
     },
     button:{
         flex:1,
         justifyContent:'flex-end',
         alignItems:'flex-end'
-    }
+    },
+   
 })
 
 export default styles;

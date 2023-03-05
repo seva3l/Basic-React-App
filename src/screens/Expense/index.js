@@ -1,10 +1,11 @@
 import { View, Text, ScrollView,TouchableOpacity } from 'react-native'
 import React from 'react'
-import Category from './components/Category'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from '@react-navigation/native'
 import styles from './_styles'
 import Chart from './components/Chart'
+import Menu from '../../components/Menu'
+import Color from '../../util/ColorConstant'
 
 const data = [
   {
@@ -53,6 +54,15 @@ const data = [
 
 const ExpenseScreen = () => {
   const navigation = useNavigation()
+
+  const RightSideComponent = () =>{
+    return(
+      <TouchableOpacity style={styles.button}>
+        <Ionicons color={"black"} name="chevron-forward" size={20}/>
+      </TouchableOpacity>
+    )
+  }
+
   return (
     <ScrollView>
     <View style={{flex:1,backgroundColor:"white"}}>
@@ -61,14 +71,14 @@ const ExpenseScreen = () => {
         <Text style={styles.title}>Top Spending Categories</Text>
       </View>
       {
-        data.map(item => <Category logo={item.logo} name={item.name} value={item.value} label={item.label} key={item.id}/>)
+        data.map(item => <Menu component={<RightSideComponent/>} logo={item.logo} name={item.name} value={item.value} label={item.label} key={item.id}/>)
       }
       <View style={styles.viewCategoriesContainer}>
-        <Text style={{textAlign:"center"}}>View All Categories</Text>
+        <Text style={{textAlign:"center",color: Color.SECONDARY_TEXT,fontSize:16}}>View All Categories</Text>
         <TouchableOpacity 
           onPress={ () => navigation.navigate("Expenses",{data:data})}
           style={styles.button}>
-          <Ionicons name="chevron-forward" size={20}/>
+          <Ionicons color={"black"} name="chevron-forward" size={20}/>
         </TouchableOpacity>
       </View>
     </View>

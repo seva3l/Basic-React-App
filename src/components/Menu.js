@@ -1,9 +1,8 @@
-import { View, Text, StyleSheet,Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet,Image } from 'react-native'
 import React from 'react'
-import Color from '../../../util/ColorConstant'
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Color from '../util/ColorConstant'
 
-const Category = ({logo,name,label,value}) => {
+const Menu = ({logo,name,label,value,component}) => {
   return (
     <View style={styles.container}>
       <Image
@@ -12,16 +11,14 @@ const Category = ({logo,name,label,value}) => {
       />
       <View style={{marginLeft:10}}>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.value}>${value} spent</Text>
+        <Text style={styles.label}>{label}</Text>
       </View>
-      <TouchableOpacity style={{flex:1,justifyContent:'flex-end',alignItems:'flex-end'}}>
-        <Ionicons name="chevron-forward" size={20}/>
-      </TouchableOpacity>
+      {component}
     </View>
   )
 }
 
-export default Category
+export default Menu
 
 const styles = StyleSheet.create({
     container:{

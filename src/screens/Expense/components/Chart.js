@@ -1,10 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { PieChart } from 'react-native-gifted-charts';
-const data = [
-    { value: 20, color: '#F44336' },
-    { value: 80, color: '#4CAF50' },
-  ];
+import Color from '../../../util/ColorConstant'
 
 export default function Chart() {
     const pieData = [
@@ -21,7 +18,6 @@ export default function Chart() {
             showText
             textColor="white"
             innerRadius={70}
-            // showTextBackground
             textBackgroundColor="white"
             textBackgroundRadius={22}
             labelsPosition={"outward"}
@@ -30,9 +26,9 @@ export default function Chart() {
           />
           <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingBottom: 20,marginBottom:5 }}>
           {pieData.map((slice, index) => (
-            <View key={index} style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <View style={{ width: 10, height: 10, backgroundColor: slice.color, marginRight: 5 }} />
-              <Text style={{fontSize:8}}>{slice.legend}</Text>
+            <View key={index} style={{ flexDirection: 'row' }}>
+              <View style={{ marginLeft:10,width: 10, height: 10, backgroundColor: slice.color, marginRight: 5 }} />
+              <Text style={{fontSize:8,color: Color.PRIMARY}}>{slice.legend}</Text>
             </View>
           ))}
         </View>

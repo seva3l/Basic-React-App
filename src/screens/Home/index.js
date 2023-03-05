@@ -1,7 +1,8 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Item from './components/Item'
 import Chart from './components/Chart'
+import Menu  from '../../components/Menu'
+import styles from './_styles'
 
 const data = [
   {
@@ -35,13 +36,20 @@ const data = [
 ]
 
 const HomeScreen = () => {
+
+  const RightSideComponent = ({value}) =>{
+      return( 
+      <View style={{flex:1}}>
+        <Text style={styles.value}>${value}</Text>
+      </View>
+    )
+  }
   return (
     <ScrollView>
     <View style={{flex:1}}>
       <Chart/>
-      {/* <Text>HomeScreen</Text> */}
       {
-        data.map(item => <Item logo={item.logo} name={item.name} label={item.label} value={item.value} key={item.id}/>)
+        data.map(item => <Menu logo={item.logo} name={item.name} label={item.label} value={item.value} key={item.id} component={<RightSideComponent value={item.value}/>}/>)
       }
     </View>
     </ScrollView>
@@ -49,5 +57,3 @@ const HomeScreen = () => {
 }
 
 export default HomeScreen
-
-const styles = StyleSheet.create({})
