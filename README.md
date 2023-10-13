@@ -1,6 +1,6 @@
 # React Native CLI App
 
-Author: Sandrei Mangubat
+Author: sndrmngbt
 
 This is a React Native CLI app created by Sandrei Mangubat.
 
