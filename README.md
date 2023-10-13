@@ -7,8 +7,7 @@ This is a React Native CLI app created by Sandrei Mangubat.
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/seva3l/dreiMangubat-React.git
-
+git clone https://github.com/seva3l/Expenses-Tracker.git
 2. Install dependencies:
 npm install
 
